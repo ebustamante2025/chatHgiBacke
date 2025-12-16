@@ -2,6 +2,7 @@
 # Dependencias (CLAVE)
 # ==============================
 node_modules
+**/node_modules
 
 # ==============================
 # Base de datos (NO subir nunca)
@@ -40,15 +41,17 @@ Thumbs.db
 dist
 .tmp
 .cache
+build
 
 # ==============================
 # Control de versiones
 # ==============================
 .git
-.gitignore
 
 # ==============================
 # Docker
 # ==============================
 docker-data
 docker-compose.yml
+docker-compose.*.yml
+Dockerfile*

@@ -19,7 +19,11 @@ const JWT_SECRET = "super_secreto_change_me"; // cámbialo en producción
 //  credentials: true
 //}));
 
+// prueba git
 
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors({
   origin: ["http://chat.hginet.com.co:8001"], // solo el front en prod
   credentials: true

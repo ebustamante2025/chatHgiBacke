@@ -1,32 +1,54 @@
-# Dependencias
-node_modules/
+# ==============================
+# Dependencias (CLAVE)
+# ==============================
+node_modules
 
+# ==============================
 # Base de datos (NO subir nunca)
+# ==============================
 *.db
 *.sqlite
 *.sqlite3
 *.db-journal
+chat.db
 
+# ==============================
 # Variables de entorno
+# ==============================
 .env
 .env.*
 
+# ==============================
 # Logs
-logs/
+# ==============================
+logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# ==============================
 # Sistema operativo
+# ==============================
 .DS_Store
 Thumbs.db
 
+# ==============================
 # Cache / Builds temporales
-dist/
-.tmp/
-.cache/
+# ==============================
+dist
+.tmp
+.cache
 
+# ==============================
+# Control de versiones
+# ==============================
+.git
+.gitignore
+
+# ==============================
 # Docker
-docker-data/
+# ==============================
+docker-data
+docker-compose.yml

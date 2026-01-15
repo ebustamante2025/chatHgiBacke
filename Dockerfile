@@ -17,7 +17,9 @@
 
 
 
-FROM node:18
+#FROM node:18
+
+FROM node:20-alpine
 
 WORKDIR /app
 
@@ -28,6 +30,9 @@ RUN npm install --production
 # Copia todo el backend, incluyendo chat.db
 COPY . .
 
+
+# carpeta donde irá la BD
+RUN mkdir -p /app/data
 # Expone el puerto del backend (si usas 4000 cambia aquí)
 EXPOSE 4000
 

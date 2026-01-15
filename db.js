@@ -1,8 +1,20 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
+const fs = require('fs');
 
 // Ruta al archivo de base de datos SQLite
-const dbPath = path.join(__dirname, 'chat.db');
+// Para desarrollo local: usa chat.db en la misma carpeta
+// Para Docker: usa /app/data/chat.db (volumen persistente)
+const dbDir = process.env.DB_DIR || path.join(__dirname, 'data');
+const dbPath = process.env.DB_PATH || path.join(dbDir, 'chat.db');
+
+// Asegurar que el directorio existe
+if (!fs.existsSync(dbDir)) {
+  fs.mkdirSync(dbDir, { recursive: true });
+  console.log(`📁 Directorio de BD creado: ${dbDir}`);
+}
+
+console.log(`📂 Ruta de base de datos: ${dbPath}`);
 const db = new sqlite3.Database(dbPath);
 
 // Crear tablas si no existen
